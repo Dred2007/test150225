@@ -45,6 +45,11 @@ public class StudentController {
         return repository.save(student);
     }
 
+    @GetMapping("/student/name")
+    public List<Student> findByName(@RequestParam String name) {
+       List<Student> st = repository.findByName(name);
+       return  st;
+    }
 }
 
 
